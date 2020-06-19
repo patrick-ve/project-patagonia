@@ -42,6 +42,7 @@ cron.schedule('0 */1 * * * *', () => {
         .replace('\t','');
       consola.success('Success! Scraper has parsed the Document Object Model Tree')
 
+
       // State management
       let CONTENT_MATCH = false
 
