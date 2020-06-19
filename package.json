@@ -1,0 +1,25 @@
+{
+  "name": "project-patagonia",
+  "version": "1.0.0",
+  "description": "A web scraper that notifies a user when a website has an update",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrick-ve/project-patagonia.git"
+  },
+  "author": "Patrick van Everdingen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrick-ve/project-patagonia/issues"
+  },
+  "homepage": "https://github.com/patrick-ve/project-patagonia#readme",
+  "dependencies": {
+    "consola": "^2.13.0",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.4.10",
+    "puppeteer": "^4.0.0"
+  }
+}
