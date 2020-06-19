@@ -18,6 +18,7 @@
   "homepage": "https://github.com/patrick-ve/project-patagonia#readme",
   "dependencies": {
     "consola": "^2.13.0",
+    "dotenv": "^8.2.0",
     "node-cron": "^2.0.3",
     "nodemailer": "^6.4.10",
     "puppeteer": "^4.0.0"

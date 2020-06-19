@@ -1,4 +1,7 @@
 "use strict";
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 // Required CommonJS module(s)
 const puppeteer = require('puppeteer')
@@ -16,12 +19,12 @@ const website = {
 async function sendMail() {
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'mail.mihos.net',
+    host: process.env.MAIL_SERVER,
     port: 465,
     secure: true,
     auth: {
-        user: 'patrick@skere-skraper.app',
-        pass: '15uurislanG!'
+        user: process.env.MAIL_ACCOUNT,
+        pass: process.env.MAIL_PASSWORD
     }
   });
 
