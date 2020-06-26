@@ -9,6 +9,7 @@ const fs = require('fs')
 const consola = require('consola')
 const cron = require('node-cron');
 const sendMail = require('./utils/sendMail.js')
+const sendFailMail = require('./utils/sendFailMail.js')
 
 // Required selectors
 const website = {
@@ -17,7 +18,7 @@ const website = {
 }
 
 // Run cron job every hour
-cron.schedule('0 */1 * * * *', () => {
+cron.schedule('0 0 */1 * * *', () => {
 
   // Immediately invoked expression
   void (async() => {
@@ -63,6 +64,7 @@ cron.schedule('0 */1 * * * *', () => {
       if (CONTENT_MATCH) {
         fs.writeFileSync('./data/oldContent.txt', html, 'utf-8')
         consola.info('No new content has been detected. Quit with exit status 0.')
+        sendFailMail().catch(console.error);
       }
 
       await browser.close()
