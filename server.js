@@ -35,13 +35,16 @@ const options = {
   },
 };
 
+console.log(options.authorization.username)
+console.log(options.authorization.password)
+
 // Run cron job every hour
 cron.schedule("0 0 */1 * * *", () => {
   // Immediately invoked expression
   void (async () => {
     try {
       // Open Puppeteer headless session
-      const browser = await puppeteer.launch();
+      const browser = await puppeteer.launch({args: ['--no-sandbox']});
       const page = await browser.newPage();
 
       // Go to website and set viewport
