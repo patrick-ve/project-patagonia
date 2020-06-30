@@ -27,8 +27,8 @@ const options = {
   method: "POST",
   authorization: {
     // TO DO: replace with environment variables
-    username: whatsApp().user,
-    password: whatsApp().password,
+    username: process.env.WHATSAPP_USER,
+    password: process.env.WHATSAPP_PASSWORD,
   },
   headers: {
     "Content-Type": "application/json",
@@ -108,7 +108,6 @@ cron.schedule("0 0 */1 * * *", () => {
           "No new content has been detected. Quit with exit status 0."
         );
       }
-      console.log();
 
       await browser.close();
     } catch (error) {
