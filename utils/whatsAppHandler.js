@@ -1,4 +1,4 @@
-function whatsAppHandler() {
+function whatsAppHandler(message) {
   const user = process.env.WHATSAPP_USER;
   const password = process.env.WHATSAPP_PASSWORD;
   const from_number = "14157386170";
@@ -10,8 +10,7 @@ function whatsAppHandler() {
     message: {
       content: {
         type: "text",
-        text:
-          "Hi Vincent, it appears the website of your camping has received an update, not later than an hour ago 🚨 Go and check it out at http://www.parquetorresdelpaine.cl/es/sistema-de-reserva-de-campamentos-1 ✈️",
+        text: message,
       },
     },
   });
