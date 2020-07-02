@@ -105,7 +105,7 @@ cron.schedule("0 0 */2 * * *", () => {
         req.end();
 
         // Send email
-        // sendMailHandler().catch(console.error);
+        sendMailHandler().catch(console.error);
       }
 
       // If old content matches current content, quit with exit status 0
@@ -184,7 +184,7 @@ cron.schedule("0 0 */1 * * *", () => {
         req.end();
 
         // Send email
-        // sendMailHandler().catch(console.error);
+        sendMailHandler().catch(console.error);
       }
 
       // If old content matches current content, quit with exit status 0
